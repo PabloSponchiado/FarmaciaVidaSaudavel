@@ -98,6 +98,13 @@ class Medicamentos {
   public setDataValidade(data_validade: number): void {
     this.data_validade = data_validade;
   }
+
+  public getPreco(): number {
+    return this.preco;
+  }
+  public setPreco(preco: number): void {
+    this.preco = preco;
+  }
   /**
     
      * @returns 
