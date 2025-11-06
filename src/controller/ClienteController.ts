@@ -12,6 +12,27 @@ class ClienteController extends Cliente {
      * @returns (200) Lista de todos os clientes
      * @returns (500) Erro na consulta
      */
+    static async cliente(req: Request, res: Response): Promise<Response> {
+        try {
+            const cpf: number = parseInt(req.params.cpf as string);
+
+            if (isNaN(cpf) || cpf <= 0) {
+                return res.status(400).json({ mensagem: "ID inválido." });
+            }
+
+            const respostaModelo = await Cliente.listarCliente(cpf);
+
+            if (respostaModelo === null) {
+                return res.status(200).json({ mensagem: "Nenhum cliente encontrado com o ID fornecido." });
+            }
+
+            return res.status(200).json(respostaModelo);
+        } catch (error) {
+            console.error(`Erro ao acesso o modelo. ${error}`);
+
+            return res.status(500).json({ mensagem: "Não foi possível recuperar o cliente." });
+        }
+    }        
     static async todos(req: Request, res: Response): Promise<Response> {
         try {
             const listarClientes: Array<Cliente> | null = await Cliente.listarClientes();

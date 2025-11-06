@@ -141,6 +141,36 @@ class Cliente {
       return null;
     }
   }
+  
+  static async listarCliente(cpf: number): Promise<Cliente | null> {
+        try {
+            // Define a consulta SQL que busca um cliente específico pelo ID.
+            const querySelectCliente = `SELECT * FROM clientes WHERE cpf=$1;`;
+
+            const respostaBD = await database.query(querySelectCliente, [cpf]);
+
+            if(respostaBD.rowCount != 0) {
+                const cliente: Cliente = new Cliente(
+                    respostaBD.rows[0].nome,
+                    respostaBD.rows[0].cpf,
+                    respostaBD.rows[0].telefone,
+                    respostaBD.rows[0].data_nascimento,
+                    respostaBD.rows[0].email
+                );
+
+                cliente.setCpf(respostaBD.rows[0].cpf);
+
+                return cliente;
+            }
+
+            return null;
+        } catch (error) {
+            console.error(`Erro ao buscar cliente no banco de dados. ${error}`);
+
+            return null;
+        }
+    }
+
   static async cadastrarCliente(cliente: Cliente): Promise<Boolean> {
     try {
       const queryInsertCliente = `INSERT INTO clientes (nome, cpf, telefone, data_nascimento, email) 

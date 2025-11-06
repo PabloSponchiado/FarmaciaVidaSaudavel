@@ -16,4 +16,5 @@ router.get("/api/clientes", ClienteController.todos);
 
 router.post("/api/clientes", ClienteController.novo);
 
+router.get("/api/clientes/:cpf", ClienteController.cliente);
 export { router }; // Exporta o roteador
