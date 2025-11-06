@@ -1,4 +1,4 @@
-export interface MedicamentosDTO {
+export interface MedicamentoDTO {
   idMedicamento?: number, //ID do carro (? indica que é opcional)
   nome: string; // Marca do carro
   fabricante: string, // Modelo do carro

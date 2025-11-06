@@ -1,4 +1,4 @@
-import type { MedicamentosDTO } from "../interface/MedicamentosDTO.js";
+import type { MedicamentoDTO } from "../interface/MedicamentosDTO.js";
 import { DatabaseModel } from "./DatabaseModel.js";
 
 const database = new DatabaseModel().pool; 
@@ -133,7 +133,7 @@ class Medicamentos {
       return null;
     }
   }
-static async cadastrarMedicamento(Medicamentos: MedicamentosDTO): Promise<boolean> {
+static async cadastrarMedicamento(Medicamentos: MedicamentoDTO): Promise<boolean> {
     try {
       const queryInsertMedicamentos = `
                 INSERT INTO Medicamentos (nome, fabricante, principio_ativo, data_validade, preco) 
