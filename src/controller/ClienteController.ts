@@ -23,7 +23,7 @@ class ClienteController extends Cliente {
             const respostaModelo = await Cliente.listarCliente(cpf);
 
             if (respostaModelo === null) {
-                return res.status(200).json({ mensagem: "Nenhum cliente encontrado com o ID fornecido." });
+                return res.status(200).json({ mensagem: "Nenhum cliente encontrado com o CPF fornecido." });
             }
 
             return res.status(200).json(respostaModelo);
