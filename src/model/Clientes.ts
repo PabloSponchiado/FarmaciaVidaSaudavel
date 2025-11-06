@@ -1,10 +1,9 @@
-import type { MedicamentosDTO } from "../interface/MedicamentosDTO.js";
-import { DatabaseModel } from "./DatabaseModel.js"; // Importa a classe DatabaseModel
+import type { ClienteDTO } from "../interface/ClientesDTO.js";
+import { DatabaseModel } from "./DatabaseModel.js"; 
 
-const database = new DatabaseModel().pool; // Inicializa o pool de conexões com o banco de dados
+const database = new DatabaseModel().pool; 
 
 class Cliente {
-  // Atributos
   private idCliente: number = 0;
   private nome: string;
   private cpf: number;
@@ -144,7 +143,6 @@ class Cliente {
   
   static async listarCliente(cpf: number): Promise<Cliente | null> {
         try {
-            // Define a consulta SQL que busca um cliente específico pelo ID.
             const querySelectCliente = `SELECT * FROM clientes WHERE cpf=$1;`;
 
             const respostaBD = await database.query(querySelectCliente, [cpf]);
