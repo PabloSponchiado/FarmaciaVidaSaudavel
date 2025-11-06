@@ -1,5 +1,5 @@
 import type { MedicamentosDTO } from "../interface/MedicamentosDTO.js";
-import { DatabaseModel } from "./DataBaseModel.js";
+import { DatabaseModel } from "./DatabaseModel.js";
 
 const database = new DatabaseModel().pool; 
 

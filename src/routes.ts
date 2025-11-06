@@ -1,7 +1,7 @@
 import { Router } from "express"; 
 import type { Request, Response } from "express"; 
-import MedicamentosController from "./controller/medicamentoController.js";
-import ClienteController from "./controller/clienteController.js";
+import MedicamentosController from "./controller/MedicamentoController.js";
+import ClienteController from "./controller/ClienteController.js";
 const router = Router(); 
 
 router.get("/api", (req: Request, res: Response) => {

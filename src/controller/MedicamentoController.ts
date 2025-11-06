@@ -1,5 +1,5 @@
 import type { MedicamentosDTO } from "../interface/MedicamentosDTO.js";
-import Medicamentos from "../model/medicamentos.js";
+import Medicamentos from "../model/Medicamentos.js";
 import type { Request, Response } from "express";
 
 class  MedicamentosController extends Medicamentos {

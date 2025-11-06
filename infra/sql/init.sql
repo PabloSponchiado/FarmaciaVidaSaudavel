@@ -1,0 +1,18 @@
+CREATE TABLE Clientes (
+    id_cliente INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(11) NOT NULL UNIQUE,
+    data_nascimento DATE NOT NULL,
+    telefone VARCHAR(15),
+    email VARCHAR(100)
+);
+
+CREATE TABLE Medicamentos (
+	id_medicamento INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
+	fabricante VARCHAR(100) NOT NULL,
+	principio_ativo VARCHAR(50) NOT NULL,
+	data_validade DATE NOT NULL,
+	preco VARCHAR (50) NOT NULL
+
+);

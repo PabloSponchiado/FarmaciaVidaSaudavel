@@ -1,5 +1,5 @@
 import type { MedicamentosDTO } from "../interface/MedicamentosDTO.js";
-import { DatabaseModel } from "./DataBaseModel.js"; // Importa a classe DatabaseModel
+import { DatabaseModel } from "./DatabaseModel.js"; // Importa a classe DatabaseModel
 
 const database = new DatabaseModel().pool; // Inicializa o pool de conexões com o banco de dados
 
