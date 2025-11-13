@@ -10,16 +10,16 @@ router.get("/api", (req: Request, res: Response) => {
 
 router.get("/api/medicamentos", MedicamentoController.todos);
 
+router.post("/api/medicamentos", MedicamentoController.novo);
+
 router.get("/api/medicamentos/:nome", MedicamentoController.medicamento);
 
-router.post("/api/medicamentos", MedicamentoController.novo);
+router.get("/api/medicamentos/principio-ativo/:principio_ativo", MedicamentoController.principioativo);
 
 router.get("/api/clientes", ClienteController.todos);
 
 router.post("/api/clientes", ClienteController.novo);
 
 router.get("/api/clientes/:cpf", ClienteController.cliente);
-
-router.get("/api/medicamentos/:principio_ativo", MedicamentoController.principioativo);
 
 export { router }; // Exporta o roteador

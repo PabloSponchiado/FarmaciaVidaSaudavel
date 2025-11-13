@@ -43,10 +43,10 @@ class Medicamentos {
 
   /**
    * Atribui um ID ao medicamento
-   * @param idMedicamento novo ID
+   * @param _idMedicamento novo ID
    */
-  public setIdMedicamento(idMedicamento: number): void {
-    this.idMedicamento = idMedicamento;
+  public setIdMedicamento(_idMedicamento: number): void {
+    this.idMedicamento = _idMedicamento;
   }
 
   /**
@@ -59,10 +59,10 @@ class Medicamentos {
 
   /**
    * Atribui um nome ao medicamento
-   * @param nome novo nome do medicamento
+   * @param _nome novo nome do medicamento
    */
-  public setNome(nome: string): void {
-    this.nome = nome;
+  public setNome(_nome: string): void {
+    this.nome = _nome;
   }
 
   /**
@@ -75,10 +75,10 @@ class Medicamentos {
 
   /**
    * Atribui um CPF ao medicamento
-   * @param fabricante novo CPF do medicamento
+   * @param _fabricante novo CPF do medicamento
    */
-  public setFabricante(fabricante: string): void {
-    this.fabricante = fabricante;
+  public setFabricante(_fabricante: string): void {
+    this.fabricante = _fabricante;
   }
 
   /**
@@ -91,25 +91,25 @@ class Medicamentos {
 
   /**
    * Atribui um telefone ao medicamento
-   * @param principio_ativo telefone do medicamento
+   * @param _principio_ativo telefone do medicamento
    */
-  public setprincipioAtivo(principio_ativo: string): void {
-    this.principio_ativo = principio_ativo;
+  public setprincipioAtivo(_principio_ativo: string): void {
+    this.principio_ativo = _principio_ativo;
   }
 
   public getDataValidade(): number {
     return this.data_validade;
   }
 
-  public setDataValidade(data_validade: number): void {
-    this.data_validade = data_validade;
+  public setDataValidade(_data_validade: number): void {
+    this.data_validade = _data_validade;
   }
 
   public getPreco(): number {
     return this.preco;
   }
-  public setPreco(preco: number): void {
-    this.preco = preco;
+  public setPreco(_preco: number): void {
+    this.preco = _preco;
   }
   /**
     
